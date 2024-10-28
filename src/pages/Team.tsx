@@ -14,57 +14,57 @@ const teamMembers: TeamMember[] = [
     name: "Igor Tchinda",
     role: "Economiste, Maitre d'œuvre",
     description: "Fort de 25 années d'expérience en France et à l'international, Igor TCHINDA est un expert en conception architecturale et en gestion de projets complexes. Sa passion pour l'Afrique et sa connaissance des enjeux locaux sont au cœur de notre approche.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://lh4.googleusercontent.com/G61bDX-SG5GQ7snXivXuj2WTIWWbDMOR67vrzy33h7yCJ0g2JrFDbvAibiuC_8nLhhP6eKUrBtoKSmtnAaKqp4IpnLYBOEfD9YUp4_3QtV7pBwCkbBjBXpJpBvff-lgKlQ=w1280"
   },
   {
     name: "Christian",
     role: "Entrepreneur",
     description: "Entrepreneur dynamique et visionnaire, Christian a une connaissance approfondie du marché rwandais et des opportunités qu'il offre. Il est le moteur de notre développement et de notre ancrage local. Sa connaissance des enjeux locaux est également au cœur de notre approche.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://lh5.googleusercontent.com/zxgql9qbnt0YFB2TyrXrqTm-ELkl7eZoxmsLEmJLjd9E-xf1dklzSzTB2roMjrhCfYMg2j3RMyt7WiLmDzp91rqztNGFxetR07tnd17A18n-TMFNaYiX6IymkAotoLWo8w=w1280"
   },
   {
     name: "Barbara",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://lh5.googleusercontent.com/z07sOIv4eprGyQ8HcskRjdf2HRW-8Xi56Ul_QJzJMhiDWYgXJL8Yien0pD6goRDMBSvBnORh_cB3z6yP4iMAV7h2bfl9MWq1VOnxqh_ZMvP34KVRuKGsZxfPJRZhDv3B9g=w1280"
   },
   {
     name: "Brice",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Ernest",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Alain",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://lh5.googleusercontent.com/uODoJQC947z2XO3jtzAOK5Q0lWsErHMc5o0-xtHFJjVqDmVtOEhRtkQ1PObYpfyM6eoh9hUJpnLCbsH5sF5ax5bHLJJmOAHVkrMth0wGFGRmL8j7htDONrJum-AzFUTxyw=w1280"
   },
   {
     name: "Katia",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Noussi",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://lh5.googleusercontent.com/raTMzPivMnBrL0xp-S2mJOUEMNgu_RTVEbWKdUgCEI8oE1XZjyK2x0G4Xw7NvwFEonhoDw1YGVSN4j4xp2Rpy2g=w1280"
   },
   {
     name: "Tommy",
-    image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Xuan",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "KONGNI Colince",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Benrardin",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   },
   {
     name: "Rosine",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small_2x/default-avatar-photo-placeholder-profile-picture-vector.jpg"
   }
 ];
 
