@@ -5,7 +5,7 @@ const architectureDesigns = [
   {
     title: "Villa Contemporaine",
     description: "Une approche moderne de l'habitat résidentiel avec des lignes épurées et des espaces ouverts.",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh3.googleusercontent.com/urMY1xMBr8VKXBX0uWNBEQ-nrlxub_eZrnIDYVh6nOUvnGmavNgxEBjDQe_XDeWv4z3nxsRqOC8ihMMYTNJ41VvzX9E1u12ZIleG606XIj4KlmPLXCLkfKhgcrHhD_eFXw=w1280",
     features: [
       "Grandes baies vitrées",
       "Matériaux durables",
@@ -15,7 +15,7 @@ const architectureDesigns = [
   {
     title: "Loft Industriel",
     description: "Transformation d'espaces industriels en habitations modernes et fonctionnelles.",
-    image: "https://images.unsplash.com/photo-1574958269340-fa927503f3dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh5.googleusercontent.com/yEm8J_46BxTRF19CuijDNfm81F8oLYFQjxLnKWY-8HGJzrMV8JxGtOHGunV6RzQVbau4OMWiByDJp8cbG67NQgRKvQiVyCdbitojGXJfgbghiEST09PyPOzBDV24ASzetw=w1280",
     features: [
       "Hauts plafonds",
       "Éléments métalliques",
@@ -25,7 +25,7 @@ const architectureDesigns = [
   {
     title: "Éco-Habitat",
     description: "Conception écologique intégrant les dernières innovations en matière de développement durable.",
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh3.googleusercontent.com/jY_m5G3P0nMb6pDRMfVKBC0TIPhGD9yCPHG_-H4eZKj7hlmOLQ4nTUm3zCR7vL9tfBkLU42UrmTHEFT6s7yjA82dmxQdGuFPKt1528feGulqV7Px50co6nmJGQgmhsIc9Q=w1280",
     features: [
       "Panneaux solaires",
       "Récupération d'eau",
@@ -35,7 +35,7 @@ const architectureDesigns = [
   {
     title: "Résidence Minimaliste",
     description: "L'art de créer des espaces épurés où chaque élément a sa place et sa fonction.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh4.googleusercontent.com/wWObP4Hvno_zhTIaTw0gbTEJv8tyoj5OW7ejNk8gb6-Z68SYwFcUY1AmolSuo92iVFOcWixO3jT6gYZlbqU2Spa6FU2lE65bMGwZHqLAG5TrV66UYU1Chf4k9sFmo4Z8Iw=w1280",
     features: [
       "Design épuré",
       "Rangements intégrés",
@@ -45,7 +45,7 @@ const architectureDesigns = [
   {
     title: "Maison Méditerranéenne",
     description: "Un style architectural qui célèbre la vie en plein air et la lumière naturelle.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh3.googleusercontent.com/lxa6g03GbL9vFmfeBa1ZRbDM_Nx8FSaKMmOHuubMTcGCHslRGoSYaNXx_PkW_6hEfRAe82GtqVeHqlV-BdJ51NV4J-oVCps82ka_LqMVYd2cIf7-iW1srzDx0IRcYzqFiQ=w1280",
     features: [
       "Terrasses spacieuses",
       "Patios intérieurs",
@@ -55,7 +55,7 @@ const architectureDesigns = [
   {
     title: "Penthouse Urbain",
     description: "Des espaces luxueux en hauteur offrant des vues panoramiques sur la ville.",
-    image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh4.googleusercontent.com/aGdiY9rjJfElIT6bmU2eYgzX-y2vOAcF2wDpY5rQw237cfJgCZH9o6j391APCwJ31qhKormbPv_k_lZN0AijZdbiDMyIlyvIQdV7AtseGsdG-9OngO9M68MviO-Untw5=w1280",
     features: [
       "Terrasses panoramiques",
       "Double hauteur",
@@ -65,7 +65,7 @@ const architectureDesigns = [
   {
     title: "Maison Passive",
     description: "Une architecture qui minimise l'empreinte énergétique sans compromis sur le confort.",
-    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh4.googleusercontent.com/TTjk0otQMoRqP1kxWex5Wqvs_xK9r0wIxLV7t7dtErRXPO6oYLrlvVOKinSLxsf1BaCA869gmqt-iZ2Razx5A_zxS-MN66eZOZ4wZRZ3wDqn5kPt0nYX3QAxJdVrgDAL_g=w1280",
     features: [
       "Consommation minimale",
       "Ventilation optimisée",
@@ -75,7 +75,7 @@ const architectureDesigns = [
   {
     title: "Villa d'Architecte",
     description: "Des créations uniques qui repoussent les limites du design architectural.",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh4.googleusercontent.com/U_pqGSJpI28uo0ESJZLiFWUhhpG56UZvJALMIOPoz0UEiBpKkt7mvYNTINfUDUGufwcquKRHnke_1BDWTSGpLOHoe19PmY3zZlnYdjI8R78GYQ81c2CEci0X1l5sP04x-g=w1280",
     features: [
       "Design signature",
       "Volumes atypiques",
@@ -85,7 +85,7 @@ const architectureDesigns = [
   {
     title: "Micro-Habitat",
     description: "Solutions innovantes pour optimiser les petits espaces urbains.",
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh5.googleusercontent.com/iJK06W868xoP1Ak_Pi2TrZYBmJsuM8zM7OBSILs6IPSE9RTXHkeGT8d833G1xApt17Up438uBOcbBRgAvY4N7ph-ULQZ-AmLj5_zEkGaR2AhLI4pvCARmPI37TCRIFsQhw=w1280",
     features: [
       "Mobilier modulable",
       "Espaces multifonctions",
@@ -95,7 +95,7 @@ const architectureDesigns = [
   {
     title: "Rénovation Historique",
     description: "Restauration et modernisation de bâtiments historiques dans le respect du patrimoine.",
-    image: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: "https://lh5.googleusercontent.com/Y9aqk_CQ5RO3pH1f1kzrmVZ20NOphl7hK_8Xb-r1vNfJHl_Ykauaz3uElzXpvLCZrn9mrWBMlRDSxVx8W6G2fms9qiA2lOk3PUOdMZbs6fm8jgE5smXi2EaHdZxIBjnF=w1280",
     features: [
       "Préservation patrimoniale",
       "Confort moderne",
@@ -110,7 +110,7 @@ const Architecture = () => {
       {/* Hero Section */}
       <div className="relative h-[40vh] bg-black">
         <img 
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          src="https://lh3.googleusercontent.com/OYMZMkMZseEuEHxqgB4YaMCQFo1czsiCdIyQAWUCusJCOlAIw19w5ytIxYuSH7OsK8yBcZd9zgPTdmR6RphxAtGl5HwQbt-e1XIm1tUVwRF8LyWFzt4PvTYcPbS3g0UNLw=w1280"
           alt="Architecture"
           className="w-full h-full object-cover opacity-70"
         />

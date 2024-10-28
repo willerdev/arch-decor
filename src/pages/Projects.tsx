@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import logo from '../images/project1.jpeg';
 interface Project {
   id: number;
   title: string;
@@ -15,7 +15,7 @@ const projects: Project[] = [
     id: 1,
     title: "Villa Moderne Côte d'Azur",
     category: "Architecture",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    image: logo,
     description: "Conception moderne avec vue panoramique sur la mer",
     year: "2023"
   },
