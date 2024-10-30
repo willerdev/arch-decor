@@ -13,10 +13,10 @@ const ShopHeader = () => {
   const SHOP_BASE_PATH = '/boutique';
 
   const countries = [
-    { code: 'EA', name: 'East' },
-    { code: 'WE', name: 'West' },
-    { code: 'CL', name: 'Central' },
-    { code: 'NT', name: 'North' }
+    { code: 'EA', name: 'East Africa' },
+    { code: 'WE', name: 'West Africa' },
+    { code: 'CL', name: 'Central Africa' },
+    { code: 'NT', name: 'North Africa' }
   ];
   // East 
 
