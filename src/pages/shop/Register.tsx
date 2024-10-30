@@ -42,13 +42,13 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full space-y-6">
         <div className="text-center">
-          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Create your account</h2>
+          <h2 className="mt-2 text-3xl font-extrabold text-gray-900">Créer votre compte</h2>
           <p className="mt-2 text-sm text-gray-600">
-            Or{' '}
+            Ou{' '}
             <a href="/boutique/login" className="font-medium text-red-600 hover:text-red-500">
-              sign in to your account
+              connectez-vous à votre compte
             </a>
           </p>
         </div>
@@ -56,7 +56,7 @@ const Signup = () => {
           <div className="space-y-4">
             <div>
               <label htmlFor="name" className="sr-only">
-                Full Name
+                Nom complet
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -69,14 +69,14 @@ const Signup = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="input-field pl-10"
-                  placeholder="Full Name"
+                  placeholder="Nom complet"
                 />
               </div>
             </div>
             
             <div>
               <label htmlFor="email" className="sr-only">
-                Email address
+                  Email address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -126,7 +126,7 @@ const Signup = () => {
             disabled={isLoading}
             className="btn-primary w-full flex justify-center"
           >
-            {isLoading ? 'Creating account...' : 'Sign up'}
+            {isLoading ? 'Création du compte...' : 'Créer un compte'}
           </button>
         </form>
       </div>

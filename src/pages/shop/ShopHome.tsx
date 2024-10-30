@@ -191,7 +191,7 @@ const ShopHome = () => {
           >
             <div className="relative">
               <img 
-                src={product.image}
+                src={product.image || "https://citroen.navigation.com/static/WFS/Shop-CitroenEMEA-Site/-/Shop-CitroenEMEA/en_GB/Product%20Not%20Found.png"}
                 alt={product.name}
                 className="w-full h-40 md:h-48 object-cover"
               />

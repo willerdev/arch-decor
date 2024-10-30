@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  'Tous les produits',
+  'Tous',
   'Meubles',
   'Décoration'
 
@@ -17,7 +17,7 @@ const CategoriesMenu = () => {
             <Link
               key={category}
               to={`/boutique/category/${category.toLowerCase().replace(/ /g, '-')}`}
-              className="text-gray-600 hover:text-red-600 text-sm font-medium"
+              className="text-gray-600 hover:text-white hover:bg-red-600 text-sm font-medium rounded-md px-2 py-1"
             >
               {category}
             </Link>
