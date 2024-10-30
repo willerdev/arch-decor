@@ -4,6 +4,7 @@ import { addToCart } from './cartUtils';
 import { db } from '../../lib/firebaseConfig';
 import { collection, getDocs, query, limit } from 'firebase/firestore';
 import { Product } from '../../types/product';
+import { Link } from 'react-router-dom';
 
 const ShopHome = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -19,10 +20,7 @@ const ShopHome = () => {
       try {
         const productsQuery = query(collection(db, 'products'), limit(8)); // Limit to 8 products initially
         const querySnapshot = await getDocs(productsQuery);
-        const productsData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        })) as Product[];
+        const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Product[];
         
         setProducts(productsData);
       } catch (error) {
@@ -189,18 +187,22 @@ const ShopHome = () => {
               animation: 'fadeInUp 0.5s ease forwards'
             }}
           >
-            <div className="relative">
-              <img 
-                src={product.image || "https://citroen.navigation.com/static/WFS/Shop-CitroenEMEA-Site/-/Shop-CitroenEMEA/en_GB/Product%20Not%20Found.png"}
-                alt={product.name}
-                className="w-full h-40 md:h-48 object-cover"
-              />
-              <button className="absolute top-2 right-2 p-2 bg-white/80 rounded-full hover:bg-white transition-all">
-                <Heart className="w-4 h-4 text-gray-600 hover:text-red-500" />
-              </button>
-            </div>
+            <Link to={`/boutique/product/${product.id}`} className="block">
+              <div className="relative">
+                <img 
+                  src={product.image || "https://citroen.navigation.com/static/WFS/Shop-CitroenEMEA-Site/-/Shop-CitroenEMEA/en_GB/Product%20Not%20Found.png"}
+                  alt={product.name}
+                  className="w-full h-40 md:h-48 object-cover"
+                />
+                <button className="absolute top-2 right-2 p-2 bg-white/80 rounded-full hover:bg-white transition-all">
+                  <Heart className="w-4 h-4 text-gray-600 hover:text-red-500" />
+                </button>
+              </div>
+            </Link>
             <div className="p-4">
-              <h3 className="font-semibold mb-2 text-sm md:text-base">{product.name}</h3>
+              <Link to={`/boutique/product/${product.id}`}>
+                <h3 className="font-semibold mb-2 text-sm md:text-base hover:text-blue-500">{product.name}</h3>
+              </Link>
               <p className="text-gray-600 mb-2 text-sm md:text-base">${product.price}</p>
               <div className="flex gap-2">
                 <button
@@ -219,10 +221,13 @@ const ShopHome = () => {
                     </>
                   )}
                 </button>
-                <button className="flex-1 border border-blue-500 text-blue-500 py-2 px-4 rounded-lg text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
+                <Link 
+                  to={`/boutique/product/${product.id}`}
+                  className="flex-1 border border-blue-500 text-blue-500 py-2 px-4 rounded-lg text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
+                >
                   <Info className="w-4 h-4" />
                   <span className="hidden md:inline">Details</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

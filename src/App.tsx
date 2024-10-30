@@ -51,7 +51,7 @@ function App() {
               <Route index element={<ShopHome />} />
               <Route path="products" element={<ProductList />} />
               <Route path="products/:category" element={<ProductList />} />
-              <Route path="product/:id" element={<ProductDetail />} />
+              <Route path="product/:productId" element={<ProductDetail />} />
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout cartItems={[]} />} />
               <Route path="account" element={<Account />} />
