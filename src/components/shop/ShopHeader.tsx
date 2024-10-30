@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import { Search, ShoppingCart, User, UserPlus } from 'lucide-react';
@@ -7,17 +7,65 @@ import { useShopContext } from '../../context/ShopContext';
 const ShopHeader = () => {
   const { cartItems } = useShopContext();
   const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
 
   const SHOP_BASE_PATH = '/boutique';
+
+  const countries = [
+    { code: 'EA', name: 'East' },
+    { code: 'WE', name: 'West' },
+    { code: 'CL', name: 'Central' },
+    { code: 'NT', name: 'North' }
+  ];
+  // East 
+
+  // West
+  
+  // Central
+  
+  // North
+  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCountry(e.target.value);
+    if (e.target.value) {
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 3000); // Hide message after 3 seconds
+    }
+  };
 
   return (
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to={SHOP_BASE_PATH} className="flex-shrink-0 flex items-center">
-            <img src={logo} alt="Arch-Decor Logo" className="w-6 h-9 mr-2" />
-            <span className="text-red-600 text-2xl font-bold">Arch-Shop</span>
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link to={SHOP_BASE_PATH} className="flex-shrink-0 flex items-center">
+              <img src={logo} alt="Arch-Decor Logo" className="w-6 h-9 mr-2" />
+              <span className="text-red-600 text-2xl font-bold">Arch-Shop</span>
+            </Link>
+            
+            <div className="relative">
+              <select
+                value={selectedCountry}
+                onChange={handleCountryChange}
+                className="pl-3 pr-8 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 text-sm"
+              >
+                <option value="">Sélectionner un Lieux</option>
+                {countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+              
+              {showMessage && (
+                <div className="absolute top-full left-0 mt-2 w-64 p-3 bg-yellow-50 border border-yellow-200 rounded-md shadow-lg z-50">
+                  <p className="text-sm text-yellow-800">
+                    Désolé, les données pour ce pays ne sont pas encore disponibles.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
 
           <div className="hidden md:flex flex-1 max-w-lg mx-8">
             <div className="relative">
@@ -26,7 +74,6 @@ const ShopHeader = () => {
                 placeholder="Rechercher un produit..."
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
               />
-              {/* <Search className="absolute right-81 top-2.5 text-gray-400" size={20} /> */}
             </div>
           </div>
 
