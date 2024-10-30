@@ -22,6 +22,10 @@ import Account from './pages/shop/Account';
 import Login from './pages/shop/Login';
 import Register from './pages/shop/Register';
 import OrderHistory from './pages/shop/OrderHistory';
+import PaymentOptions from './pages/shop/PaymentOptions';
+import OrderConfirmation from './pages/shop/OrderConfirmation';
+import CategoryPage from './pages/shop/CategoryPage';
+
 
 function App() {
   return (
@@ -43,16 +47,20 @@ function App() {
 
             {/* Shop routes */}
             <Route path="/boutique" element={<ShopLayout />}>
+              <Route path="cart" element={<Cart />} />
               <Route index element={<ShopHome />} />
               <Route path="products" element={<ProductList />} />
               <Route path="products/:category" element={<ProductList />} />
               <Route path="product/:id" element={<ProductDetail />} />
               <Route path="cart" element={<Cart />} />
-              <Route path="checkout" element={<Checkout />} />
+              <Route path="checkout" element={<Checkout cartItems={[]} />} />
               <Route path="account" element={<Account />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="orders" element={<OrderHistory />} />
+              <Route path="payment-options" element={<PaymentOptions />} />
+              <Route path="order-confirmation" element={<OrderConfirmation />} />
+              <Route path="category/:category" element={<CategoryPage />} />
             </Route>
           </Routes>
         </div>
