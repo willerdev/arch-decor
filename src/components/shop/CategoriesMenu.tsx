@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 const categories = [
   'Tous les produits',
   'Meubles',
-  'Décoration',
-  'Luminaires',
-  'Art & Tableaux',
-  'Tapis',
-  'Accessoires'
+  'Décoration'
+
 ];
 
 const CategoriesMenu = () => {
