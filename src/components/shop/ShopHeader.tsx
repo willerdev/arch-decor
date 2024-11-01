@@ -12,19 +12,8 @@ const ShopHeader = () => {
 
   const SHOP_BASE_PATH = '/boutique';
 
-  const countries = [
-    { code: 'EA', name: 'East Africa' },
-    { code: 'WE', name: 'West Africa' },
-    { code: 'CL', name: 'Central Africa' },
-    { code: 'NT', name: 'North Africa' }
-  ];
-  // East 
 
-  // West
-  
-  // Central
-  
-  // North
+
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
     if (e.target.value) {
@@ -40,23 +29,11 @@ const ShopHeader = () => {
           <div className="flex items-center space-x-4">
             <Link to={SHOP_BASE_PATH} className="flex-shrink-0 flex items-center">
               <img src={logo} alt="Arch-Decor Logo" className="w-6 h-9 mr-2" />
-              <span className="text-red-600 text-2xl font-bold">Arch-Shop</span>
+              <span className="text-red-600 text-2xl font-bold">KMT Shop</span>
             </Link>
             
             <div className="relative">
-              <select
-                value={selectedCountry}
-                onChange={handleCountryChange}
-                className="pl-3 pr-8 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 text-sm"
-              >
-                <option value="">Sélectionner un Lieux</option>
-                {countries.map((country) => (
-                  <option key={country.code} value={country.code}>
-                    {country.name}
-                  </option>
-                ))}
-              </select>
-              
+            
               {showMessage && (
                 <div className="absolute top-full left-0 mt-2 w-64 p-3 bg-yellow-50 border border-yellow-200 rounded-md shadow-lg z-50">
                   <p className="text-sm text-yellow-800">

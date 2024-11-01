@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Architecture from './pages/Architecture';
@@ -25,7 +25,14 @@ import OrderHistory from './pages/shop/OrderHistory';
 import PaymentOptions from './pages/shop/PaymentOptions';
 import OrderConfirmation from './pages/shop/OrderConfirmation';
 import CategoryPage from './pages/shop/CategoryPage';
+import AreaPage from './pages/shop/AreaPage';
 
+// Admin Components
+import AdminLayout from './layouts/AdminLayout';
+import AdminProducts from './pages/admin/Products';
+import AdminOrders from './pages/admin/Orders';
+import AdminUsers from './pages/admin/Users';
+import AdminLogin from './pages/admin/Login';
 
 function App() {
   return (
@@ -49,6 +56,7 @@ function App() {
             <Route path="/boutique" element={<ShopLayout />}>
               <Route path="cart" element={<Cart />} />
               <Route index element={<ShopHome />} />
+              <Route path="area/:areaId" element={<AreaPage />} />
               <Route path="products" element={<ProductList />} />
               <Route path="products/:category" element={<ProductList />} />
               <Route path="product/:productId" element={<ProductDetail />} />
@@ -61,6 +69,17 @@ function App() {
               <Route path="payment-options" element={<PaymentOptions />} />
               <Route path="order-confirmation" element={<OrderConfirmation />} />
               <Route path="category/:category" element={<CategoryPage />} />
+            </Route>
+
+            {/* Admin routes */}
+            <Route path="/admin">
+              <Route path="login" element={<AdminLogin />} />
+              <Route element={<AdminLayout />}>
+                <Route index element={<Navigate to="/admin/products" replace />} />
+            <Route path="products" element={<AdminProducts />} />
+                <Route path="orders" element={<AdminOrders />} />
+                <Route path="users" element={<AdminUsers />} />
+              </Route>
             </Route>
           </Routes>
         </div>

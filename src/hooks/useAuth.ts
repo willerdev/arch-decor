@@ -13,34 +13,28 @@ interface UserData {
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [userData, setUserData] = useState<UserData | null>(null);
+  const [userData, setUserData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (firebaseUser: User | null) => {
-      setUser(firebaseUser);
-      
+    const unsubscribe = auth.onAuthStateChanged(async (firebaseUser) => {
       if (firebaseUser) {
-        try {
-          const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
-          if (userDoc.exists()) {
-            setUserData({
-              ...userDoc.data() as UserData,
-              email: firebaseUser.email
-            });
-          }
-        } catch (error) {
-          console.error('Error fetching user data:', error);
+        const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
+        if (userDoc.exists()) {
+          setUserData(userDoc.data());
         }
+        setUser(firebaseUser);
       } else {
+        setUser(null);
         setUserData(null);
       }
-      
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
-  return { user, userData, loading };
+  const isAdmin = userData?.role === 'admin';
+
+  return { user, userData, loading, isAdmin };
 };
