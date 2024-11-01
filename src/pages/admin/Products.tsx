@@ -17,7 +17,8 @@ const AdminProducts = () => {
     category: '',
     stock: '',
     image: null as File | null,
-    featured: false
+    featured: false,
+    area: ''
   });
 
   useEffect(() => {
@@ -62,7 +63,8 @@ const AdminProducts = () => {
         category: formData.category,
         stock: parseInt(formData.stock),
         image: imageUrl,
-        featured: formData.featured
+        featured: formData.featured,
+        area: formData.area
       };
 
       if (selectedProduct) {
@@ -83,11 +85,27 @@ const AdminProducts = () => {
 
   const handleDelete = async (productId: string) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
+      setIsLoading(true);
       try {
-        await deleteDoc(doc(db, 'products', productId));
-        fetchProducts();
+        // Reference to the product document
+        const productRef = doc(db, 'products', productId);
+        
+        // Delete the product
+        await deleteDoc(productRef);
+        
+        // Update the local state to remove the deleted product
+        setProducts(prevProducts => 
+          prevProducts.filter(product => product.id !== productId)
+        );
+        
+        // Show success message (you can use a toast notification library if available)
+        alert('Product deleted successfully');
+        
       } catch (error) {
         console.error('Error deleting product:', error);
+        alert('Failed to delete product. Please try again.');
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -100,7 +118,8 @@ const AdminProducts = () => {
       category: '',
       stock: '',
       image: null,
-      featured: false
+      featured: false,
+      area: ''
     });
     setSelectedProduct(null);
   };
@@ -119,58 +138,72 @@ const AdminProducts = () => {
       </div>
 
       {/* Products Table */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stock</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td className="px-6 py-4">
-                  <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded" />
-                </td>
-                <td className="px-6 py-4">{product.name}</td>
-                <td className="px-6 py-4">${product.price}</td>
-                <td className="px-6 py-4">{product.stock}</td>
-                <td className="px-6 py-4">
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => {
-                        setSelectedProduct(product);
-                        setFormData({
-                          name: product.name,
-                          description: product.description,
-                          price: product.price.toString(),
-                          category: product.category,
-                          stock: product.stock.toString(),
-                          image: null,
-                          featured: product.featured
-                        });
-                        setIsModalOpen(true);
-                      }}
-                      className="text-blue-500 hover:text-blue-700"
-                    >
-                      <Edit size={20} />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(product.id)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <Trash size={20} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="overflow-x-auto">
+        <div className="inline-block min-w-full align-middle">
+          <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:px-6">Image</th>
+                  <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:px-6">Name</th>
+                  <th className="hidden sm:table-cell px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:px-6">Price</th>
+                  <th className="hidden sm:table-cell px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:px-6">Stock</th>
+                  <th className="px-3 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider sm:px-6">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {products.map((product) => (
+                  <tr key={product.id} className="hover:bg-gray-50">
+                    <td className="px-3 py-4 whitespace-nowrap sm:px-6">
+                      <img src={product.image} alt={product.name} className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded" />
+                    </td>
+                    <td className="px-3 py-4 whitespace-nowrap sm:px-6">
+                      <div className="text-sm font-medium text-gray-900">{product.name}</div>
+                      <div className="text-sm text-gray-500 sm:hidden">
+                        ${product.price} • {product.stock} in stock
+                      </div>
+                    </td>
+                    <td className="hidden sm:table-cell px-3 py-4 whitespace-nowrap sm:px-6">
+                      ${product.price}
+                    </td>
+                    <td className="hidden sm:table-cell px-3 py-4 whitespace-nowrap sm:px-6">
+                      {product.stock}
+                    </td>
+                    <td className="px-3 py-4 whitespace-nowrap text-right text-sm font-medium sm:px-6">
+                      <div className="flex justify-end gap-2">
+                        <button
+                          onClick={() => {
+                            setSelectedProduct(product);
+                            setFormData({
+                              name: product.name,
+                              description: product.description,
+                              price: product.price.toString(),
+                              category: product.category,
+                              stock: product.stock.toString(),
+                              image: null,
+                              featured: product.featured,
+                              area: product.area
+                            });
+                            setIsModalOpen(true);
+                          }}
+                          className="text-blue-500 hover:text-blue-700 p-2"
+                        >
+                          <Edit size={18} />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(product.id)}
+                          className="text-red-500 hover:text-red-700 p-2"
+                        >
+                          <Trash size={18} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       {/* Add/Edit Product Modal */}
@@ -186,7 +219,6 @@ const AdminProducts = () => {
               </button>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Form fields */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">Name</label>
                 <input
@@ -197,8 +229,94 @@ const AdminProducts = () => {
                   required
                 />
               </div>
-              {/* Add other form fields similarly */}
-              
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Description</label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Price</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  value={formData.price}
+                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Category</label>
+                <select
+                  value={formData.category}
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                >
+                  <option value="">Select a category</option>
+                  <option value="furniture">Furniture</option>
+                  <option value="lighting">Lighting</option>
+                  <option value="decoration">Decoration</option>
+                  <option value="art">Art</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Area</label>
+                <select
+                  value={formData.area}
+                  onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                >
+                  <option value="">Select an area</option>
+                  <option value="EA">East Africa</option>
+                  <option value="WE">West Africa</option>
+                  <option value="CL">Central Africa</option>
+                  <option value="NT">North Africa</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Stock</label>
+                <input
+                  type="number"
+                  value={formData.stock}
+                  onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Image</label>
+                <input
+                  type="file"
+                  onChange={(e) => setFormData({ ...formData, image: e.target.files?.[0] || null })}
+                  className="mt-1 block w-full"
+                  accept="image/*"
+                  required={!selectedProduct}
+                />
+              </div>
+
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={formData.featured}
+                  onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
+                  className="h-4 w-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded"
+                />
+                <label className="ml-2 block text-sm text-gray-700">Featured Product</label>
+              </div>
+
               <div className="flex justify-end gap-4">
                 <button
                   type="button"

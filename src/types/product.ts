@@ -7,6 +7,7 @@ export interface Product {
   image: string;
   stock: number;
   featured: boolean;
+  area: string;
 }
 
 export type ProductCategory = {

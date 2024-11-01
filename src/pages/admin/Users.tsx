@@ -34,7 +34,8 @@ const Users = () => {
       const snapshot = await getDocs(usersQuery);
       const usersData = snapshot.docs.map(doc => ({
         uid: doc.id,
-        ...doc.data()
+        ...doc.data(),
+        createdAt: doc.data().createdAt?.toDate() || new Date()
       })) as User[];
       setUsers(usersData);
     } catch (error) {
