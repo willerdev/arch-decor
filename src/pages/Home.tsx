@@ -14,7 +14,7 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl font-bold mb-4">Arch-Decor</h1>
+            <h1 className="text-5xl font-bold mb-4">KMT Shop</h1>
             <p className="text-xl mb-8">Excellence en Architecture et Décoration</p>
             <Link 
               to="/contact"
