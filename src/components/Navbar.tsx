@@ -24,12 +24,24 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/architecture" className="text-gray-700 hover:text-red-600">Architecture</Link>
-            <Link to="/decoration" className="text-gray-700 hover:text-red-600">Décoration</Link>
-            <Link to="/projets" className="text-gray-700 hover:text-red-600">Nos Projets</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-red-600">Contact</Link>
-            <Link to="/boutique" className="text-gray-700 hover:text-red-600">Boutique</Link>
-            <Link to="/equipe" className="text-gray-700 hover:text-red-600">Notre Équipe</Link>
+            <Link to="/architecture" className="text-gray-700 hover:text-red-600">Why KMT?</Link>
+            <div className="relative group">
+              <Link to="/decoration" className="text-gray-700 hover:text-red-600">About</Link>
+              <div className="absolute hidden group-hover:block bg-white shadow-md py-2 mt-2">
+                <Link to="/african-history" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African History</Link>
+                <Link to="/african-updates" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African Updates</Link>
+              </div>
+            </div>
+            <Link to="/projets" className="text-gray-700 hover:text-red-600">Transit or Transport</Link>
+            <div className="relative group">
+              <Link to="/contact" className="text-gray-700 hover:text-red-600">Contact</Link>
+              <div className="absolute hidden group-hover:block bg-white shadow-md py-2 mt-2">
+                <Link to="/contact/france" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">KMT France</Link>
+                <Link to="/contact/rwanda" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">KMT Rwanda</Link>
+              </div>
+            </div>
+            <Link to="/boutique" className="text-gray-700 hover:text-red-600">Shop</Link>
+            <Link to="/equipe" className="text-gray-700 hover:text-red-600">Our Team</Link>
             <Link to="/services" className="text-gray-700 hover:text-red-600">Services</Link>
 {/*             
             <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="text-gray-700 hover:text-red-600">
@@ -66,9 +78,13 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link to="/architecture" className="block px-3 py-2 text-gray-700 hover:text-red-600">Architecture</Link>
-            <Link to="/decoration" className="block px-3 py-2 text-gray-700 hover:text-red-600">Décoration</Link>
+            <Link to="/decoration" className="block px-3 py-2 text-gray-700 hover:text-red-600">About</Link>
+            <Link to="/african-history" className="block px-3 py-2 ml-4 text-gray-700 hover:text-red-600">African History</Link>
+            <Link to="/african-updates" className="block px-3 py-2 ml-4 text-gray-700 hover:text-red-600">African Updates</Link>
             <Link to="/projets" className="block px-3 py-2 text-gray-700 hover:text-red-600">Nos Projets</Link>
             <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:text-red-600">Contact</Link>
+            <Link to="/contact/france" className="block px-3 py-2 ml-4 text-gray-700 hover:text-red-600">KMT France</Link>
+            <Link to="/contact/rwanda" className="block px-3 py-2 ml-4 text-gray-700 hover:text-red-600">KMT Rwanda</Link>
             <Link to="/boutique" className="block px-3 py-2 text-gray-700 hover:text-red-600">Boutique</Link>
             <Link to="/equipe" className="block px-3 py-2 text-gray-700 hover:text-red-600">Notre Équipe</Link>
           </div>

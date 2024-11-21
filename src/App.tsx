@@ -34,6 +34,9 @@ import AdminOrders from './pages/admin/Orders';
 import AdminUsers from './pages/admin/Users';
 import AdminLogin from './pages/admin/Login';
 
+import ContactFrance from './pages/contact/France';
+import ContactRwanda from './pages/contact/Rwanda';
+
 function App() {
   return (
     <ShopProvider>
@@ -81,6 +84,10 @@ function App() {
                 <Route path="users" element={<AdminUsers />} />
               </Route>
             </Route>
+
+            {/* Contact routes */}
+            <Route path="contact/france" element={<ContactFrance />} />
+            <Route path="contact/rwanda" element={<ContactRwanda />} />
           </Routes>
         </div>
       </BrowserRouter>
