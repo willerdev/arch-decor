@@ -9,13 +9,13 @@ const Home = () => {
       <div 
         className="h-[80vh] bg-cover bg-center relative"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+          backgroundImage: 'url("https://about.fb.com/wp-content/uploads/2022/05/Generic-FB-profile-cover_Banner_NoLogo_darkgrey.jpg")'
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-5xl font-bold mb-4">KMT Shop</h1>
-            <p className="text-xl mb-8">Excellence en Architecture et Décoration</p>
+            <p className="text-xl mb-8">Authentic African Artistry & Heritage</p>
             <Link 
               to="/contact"
               className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-300"
@@ -80,7 +80,7 @@ const Home = () => {
             </div>
             <div className="relative h-[400px]">
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                src="https://hogfurniture.co/cdn/shop/articles/istockphoto-176961787-612x612.jpg?v=1680265453" 
                 alt="Notre équipe" 
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
