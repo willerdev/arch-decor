@@ -27,7 +27,7 @@ const Navbar = () => {
             <Link to="/architecture" className="text-gray-700 hover:text-red-600">Why KMT?</Link>
             <div className="relative group">
               <Link to="/decoration" className="text-gray-700 hover:text-red-600">About</Link>
-              <div className="absolute hidden group-hover:block bg-white shadow-md py-2 mt-2">
+              <div className="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out bg-white shadow-md py-2 mt-2">
                 <Link to="/african-history" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African History</Link>
                 <Link to="/african-updates" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African Updates</Link>
               </div>
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to="/projets" className="text-gray-700 hover:text-red-600">Transit or Transport</Link>
             <div className="relative group">
               <Link to="/contact" className="text-gray-700 hover:text-red-600">Contact</Link>
-              <div className="absolute hidden group-hover:block bg-white shadow-md py-2 mt-2">
+              <div className="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out bg-white shadow-md py-2 mt-2">
                 <Link to="/contact/france" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">KMT France</Link>
                 <Link to="/contact/rwanda" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">KMT Rwanda</Link>
               </div>

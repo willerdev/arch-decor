@@ -24,6 +24,16 @@
   .input-field {
     @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600;
   }
+
+  .group:hover .absolute {
+    display: block;
+    transition-delay: 0.2s;
+  }
+
+  .group .absolute {
+    transition: opacity 300ms, visibility 300ms;
+    transition-delay: 0.2s;
+  }
 }
 
 .fade-enter {

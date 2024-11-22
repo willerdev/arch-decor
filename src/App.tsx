@@ -36,6 +36,8 @@ import AdminLogin from './pages/admin/Login';
 
 import ContactFrance from './pages/contact/France';
 import ContactRwanda from './pages/contact/Rwanda';
+import AfricanHistory from './pages/african/History';
+import AfricanUpdates from './pages/african/Updates';
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/equipe" element={<Team />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/african-history" element={<AfricanHistory />} />
+              <Route path="/african-updates" element={<AfricanUpdates />} />
             </Route>
 
             {/* Shop routes */}
