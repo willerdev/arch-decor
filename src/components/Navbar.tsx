@@ -28,6 +28,7 @@ const Navbar = () => {
             <div className="relative group">
               <Link to="/decoration" className="text-gray-700 hover:text-red-600">About</Link>
               <div className="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out bg-white shadow-md py-2 mt-2">
+                <Link to="/about" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">About Us</Link>
                 <Link to="/african-history" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African History</Link>
                 <Link to="/african-updates" className="block px-4 py-2 text-gray-700 hover:text-red-600 whitespace-nowrap">African Updates</Link>
               </div>

@@ -38,7 +38,7 @@ import ContactFrance from './pages/contact/France';
 import ContactRwanda from './pages/contact/Rwanda';
 import AfricanHistory from './pages/african/History';
 import AfricanUpdates from './pages/african/Updates';
-
+import About from './components/About';
 function App() {
   return (
     <ShopProvider>
@@ -57,6 +57,7 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/african-history" element={<AfricanHistory />} />
               <Route path="/african-updates" element={<AfricanUpdates />} />
+              <Route path="/about" element={<About />} />
             </Route>
 
             {/* Shop routes */}
