@@ -14,6 +14,13 @@ const CategoriesMenu = () => {
     <nav className="bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-8 h-12">
+        <Link
+             
+              to={`https://kmtshop.biz/`}
+              className="text-gray-600 hover:text-white hover:bg-red-600 text-sm font-medium rounded-md px-2 py-1"
+            >
+             Home page
+            </Link>
           {categories.map((name) => (
             <Link
               key={name.code}
