@@ -9,7 +9,7 @@ const Home = () => {
       <div 
         className="h-[80vh] bg-cover bg-center relative"
         style={{
-          backgroundImage: 'url("https://about.fb.com/wp-content/uploads/2022/05/Generic-FB-profile-cover_Banner_NoLogo_darkgrey.jpg")'
+          backgroundImage: 'url("https://visit-detroit.imgix.net/images/main-images/woodward-avenue-shopping.jpg?auto=compress%2Cformat&crop=focalpoint&fit=min&fp-x=0.3395&fp-y=0.4766&h=630&q=80&w=1200&s=b53276c5435023f48022136ec59423fa")'
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
