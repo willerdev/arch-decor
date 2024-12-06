@@ -13,57 +13,57 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Villa Moderne Côte d'Azur",
-    category: "Architecture",
-    image: logo,
-    description: "Conception moderne avec vue panoramique sur la mer",
+    title: "Electric Bus Fleet",
+    category: "Public Transit",
+    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e",
+    description: "Modern electric bus fleet for sustainable city transport",
     year: "2023"
   },
   {
     id: 2,
-    title: "Appartement Haussmannien",
-    category: "Décoration",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    description: "Rénovation complète dans le respect du style historique",
+    title: "High-Speed Rail",
+    category: "Railways",
+    image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3",
+    description: "Advanced high-speed rail connecting major cities",
     year: "2023"
   },
   {
-    id: 3,
-    title: "Loft New-Yorkais",
-    category: "Architecture",
-    image: "https://images.unsplash.com/photo-1574958269340-fa927503f3dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    description: "Transformation d'un espace industriel en habitat moderne",
+    id: 3, 
+    title: "Cargo Ships",
+    category: "Maritime",
+    image: "https://images.unsplash.com/photo-1577149004688-f43f76034583",
+    description: "Modern cargo fleet for international shipping",
     year: "2022"
   },
   {
     id: 4,
-    title: "Penthouse Paris",
-    category: "Décoration",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    description: "Design luxueux avec vue sur la Tour Eiffel",
+    title: "Metro System",
+    category: "Public Transit",
+    image: "https://images.unsplash.com/photo-1565120130276-dfbd9a7a3ad7",
+    description: "Underground metro network for urban mobility",
     year: "2022"
   },
   {
     id: 5,
-    title: "Éco-Resort Provence",
-    category: "Architecture",
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    description: "Complex hôtelier écologique intégré à son environnement",
+    title: "Air Freight",
+    category: "Aviation",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05",
+    description: "Air cargo services for rapid delivery",
     year: "2022"
   },
   {
     id: 6,
-    title: "Boutique Hôtel",
-    category: "Décoration",
-    image: "https://images.unsplash.com/photo-1582037928769-49d3d7e1ee3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    description: "Design d'intérieur unique pour hôtel de charme",
+    title: "Electric Trams",
+    category: "Railways",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c",
+    description: "Modern tram system for city center transit",
     year: "2021"
   }
 ];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Tous');
-  const categories = ['Tous', 'Architecture', 'Décoration'];
+  const categories = ['Tous', 'Public Transit', 'Railways', 'Maritime', 'Aviation'];
 
   const filteredProjects = selectedCategory === 'Tous'
     ? projects
@@ -80,8 +80,8 @@ const Projects = () => {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Nos Projets</h1>
-            <p className="text-xl">Découvrez nos réalisations exceptionnelles</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Transport Projects</h1>
+            <p className="text-xl">Discover our transportation solutions</p>
           </div>
         </div>
       </div>
@@ -146,13 +146,13 @@ const Projects = () => {
       {/* Contact CTA */}
       <div className="bg-white py-16 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Vous avez un projet en tête ?</h2>
-          <p className="text-gray-600 mb-8">Contactez-nous pour discuter de votre vision</p>
+          <h2 className="text-3xl font-bold mb-4">Have a transport project in mind?</h2>
+          <p className="text-gray-600 mb-8">Contact us to discuss your transportation needs</p>
           <a 
             href="/contact" 
             className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-300"
           >
-            Contactez-nous
+            Contact us
           </a>
         </div>
       </div>
