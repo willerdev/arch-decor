@@ -44,7 +44,6 @@ function App() {
     <ShopProvider>
       <BrowserRouter>
         <div className="min-h-screen bg-white">
-          {/* Main Site Routes */}
           <Routes>
             {/* Regular website routes */}
             <Route element={<MainLayout />}>
@@ -58,6 +57,8 @@ function App() {
               <Route path="/african-history" element={<AfricanHistory />} />
               <Route path="/african-updates" element={<AfricanUpdates />} />
               <Route path="/about" element={<About />} />
+              <Route path="contact/france" element={<ContactFrance />} />
+              <Route path="contact/rwanda" element={<ContactRwanda />} />
             </Route>
 
             {/* Shop routes */}
@@ -89,10 +90,6 @@ function App() {
                 <Route path="users" element={<AdminUsers />} />
               </Route>
             </Route>
-
-            {/* Contact routes */}
-            <Route path="contact/france" element={<ContactFrance />} />
-            <Route path="contact/rwanda" element={<ContactRwanda />} />
           </Routes>
         </div>
       </BrowserRouter>

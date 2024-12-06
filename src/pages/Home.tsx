@@ -15,7 +15,7 @@ const Home = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-5xl font-bold mb-4">KMT Shop</h1>
-            <p className="text-xl mb-8">Authentic African Artistry & Heritage</p>
+            <p className="text-xl mb-8">Shop for African Artistry & Heritage</p>
             <Link 
               to="/contact"
               className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-300"
