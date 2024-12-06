@@ -12,7 +12,7 @@ const Home = () => {
           backgroundImage: 'url("https://about.fb.com/wp-content/uploads/2022/05/Generic-FB-profile-cover_Banner_NoLogo_darkgrey.jpg")'
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-5xl font-bold mb-4">KMT Shop</h1>
             <p className="text-xl mb-8">Authentic African Artistry & Heritage</p>
