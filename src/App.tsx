@@ -33,6 +33,10 @@ import AdminProducts from './pages/admin/Products';
 import AdminOrders from './pages/admin/Orders';
 import AdminUsers from './pages/admin/Users';
 import AdminLogin from './pages/admin/Login';
+import AdminDashboard from './pages/admin/Dashboard';
+import AdminCategories from './pages/admin/Categories';
+import AdminSettings from './pages/admin/Settings';
+import AdminSliders from './pages/admin/Sliders';
 
 import ContactFrance from './pages/contact/France';
 import ContactRwanda from './pages/contact/Rwanda';
@@ -40,6 +44,7 @@ import AfricanHistory from './pages/african/History';
 import AfricanUpdates from './pages/african/Updates';
 import About from './components/About';
 import GoogleTranslate from './components/GoogleTranslate'; // Import GoogleTranslate component
+
 
 function App() {
   return (
@@ -52,13 +57,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/architecture" element={<Architecture />} />
               <Route path="/decoration" element={<Decoration />} />
-              <Route path="/projets" element={<Projects />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/team" element={<Team />} />
               <Route path="/services" element={<Services />} />
               <Route path="/african-history" element={<AfricanHistory />} />
               <Route path="/african-updates" element={<AfricanUpdates />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/about-us" element={<About />} />
               <Route path="contact/france" element={<ContactFrance />} />
               <Route path="contact/rwanda" element={<ContactRwanda />} />
             </Route>
@@ -90,6 +95,9 @@ function App() {
                 <Route path="products" element={<AdminProducts />} />
                 <Route path="orders" element={<AdminOrders />} />
                 <Route path="users" element={<AdminUsers />} />
+                <Route path="categories" element={<AdminCategories />} />
+                <Route path="settings" element={<AdminSettings />} />
+                <Route path="sliders" element={<AdminSliders />} />
               </Route>
             </Route>
           </Routes>

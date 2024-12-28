@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { Navigate, Outlet, useNavigate, Link } from 'react-router-dom';
-import { LogOut, LayoutDashboard, Package, ShoppingCart, Users, Menu, X } from 'lucide-react';
+import { 
+  LogOut, 
+  LayoutDashboard, 
+  Package, 
+  ShoppingCart, 
+  Users, 
+  Menu, 
+  X,
+  Settings,
+  Layers,
+  Image
+} from 'lucide-react';
 
 const AdminLayout = () => {
   const navigate = useNavigate();
@@ -24,7 +35,7 @@ const AdminLayout = () => {
     <div className="flex h-screen bg-gray-50">
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
           onClick={closeSidebar}
         />
@@ -41,30 +52,69 @@ const AdminLayout = () => {
           <p className="text-sm text-gray-600 mt-1">Welcome back, Admin</p>
         </div>
         <nav className="mt-6">
-          <Link 
-            to="/admin/products" 
+          <Link
+            to="/admin/dashboard"
+            onClick={closeSidebar}
+            className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
+          >
+            <LayoutDashboard className="w-5 h-5 mr-3" />
+            Dashboard
+          </Link>
+          <Link
+            to="/admin/products"
             onClick={closeSidebar}
             className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
           >
             <Package className="w-5 h-5 mr-3" />
             Products
           </Link>
-          <Link 
-            to="/admin/orders" 
+          <Link
+            to="/admin/categories"
+            onClick={closeSidebar}
+            className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
+          >
+            <Layers className="w-5 h-5 mr-3" />
+            Categories
+          </Link>
+          <Link
+            to="/admin/orders"
             onClick={closeSidebar}
             className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
           >
             <ShoppingCart className="w-5 h-5 mr-3" />
             Orders
           </Link>
-          <Link 
-            to="/admin/users" 
+          <Link
+            to="/admin/users"
             onClick={closeSidebar}
             className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
           >
             <Users className="w-5 h-5 mr-3" />
             Users
           </Link>
+          <Link
+            to="/admin/sliders"
+            onClick={closeSidebar}
+            className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
+          >
+            <Image className="w-5 h-5 mr-3" />
+            Sliders
+          </Link>
+          <Link
+            to="/admin/settings"
+            onClick={closeSidebar}
+            className="flex items-center px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600"
+          >
+            <Settings className="w-5 h-5 mr-3" />
+            Settings
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="flex items-center px-6 py-3 w-full text-left text-gray-700 hover:bg-red-50 hover:text-red-600"
+          >
+            <LogOut className="w-5 h-5 mr-3" />
+            Logout
+          </button>
         </nav>
       </div>
 
