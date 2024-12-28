@@ -71,7 +71,7 @@ const ShopHome = () => {
     {
       id: 3,
       title: "Unmissable Deals",
-      subtitle: "Grab Your Favorites Before They’re Gone!",
+      subtitle: "Grab Your Favorites Before Theyre Gone! !!",
       bgColor: "bg-gradient-to-r from-green-500 to-blue-500",
       image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     }
