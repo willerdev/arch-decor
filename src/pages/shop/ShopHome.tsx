@@ -53,30 +53,30 @@ const ShopHome = () => {
       </div>
     );
   }
-
   const heroSlides = [
     {
       id: 1,
-      title: "Summer Collection",
-      subtitle: "30% Off on Selected Items",
+      title: "Exclusive Summer Trends",
+      subtitle: "Shop the Hottest Styles - Up to 50% Off!",
       bgColor: "bg-gradient-to-r from-blue-500 to-purple-500",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 2,
-      title: "New Arrivals",
-      subtitle: "Check out our latest products",
+      title: "Fresh Arrivals",
+      subtitle: "Your Perfect Look Awaits - Shop Now!",
       bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
-      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      image: "https://images.unsplash.com/photo-1513708922415-c8e7c8602274?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 3,
-      title: "Special Deals",
-      subtitle: "Limited time offers",
+      title: "Unmissable Deals",
+      subtitle: "Grab Your Favorites Before They’re Gone!",
       bgColor: "bg-gradient-to-r from-green-500 to-blue-500",
-      image: "https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     }
   ];
+  
 
   const categories = [
     { id: 1, name: "Electronics", color: "bg-red-400", icon: Smartphone },
@@ -187,7 +187,7 @@ const ShopHome = () => {
               animation: 'fadeInUp 0.5s ease forwards'
             }}
           >
-            <Link to={`/boutique/product/${product.id}`} className="block">
+            <Link to={`/shop/product/${product.id}`} className="block">
               <div className="relative">
                 <img 
                   src={product.image || "https://citroen.navigation.com/static/WFS/Shop-CitroenEMEA-Site/-/Shop-CitroenEMEA/en_GB/Product%20Not%20Found.png"}
@@ -200,7 +200,7 @@ const ShopHome = () => {
               </div>
             </Link>
             <div className="p-4">
-              <Link to={`/boutique/product/${product.id}`}>
+              <Link to={`/shop/product/${product.id}`}>
                 <h3 className="font-semibold mb-2 text-sm md:text-base hover:text-blue-500">{product.name}</h3>
               </Link>
               <p className="text-gray-600 mb-2 text-sm md:text-base">${product.price}</p>
@@ -222,7 +222,7 @@ const ShopHome = () => {
                   )}
                 </button>
                 <Link 
-                  to={`/boutique/product/${product.id}`}
+                  to={`/shop/product/${product.id}`}
                   className="flex-1 border border-blue-500 text-blue-500 py-2 px-4 rounded-lg text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
                 >
                   <Info className="w-4 h-4" />
