@@ -54,7 +54,7 @@ function App() {
               <Route path="/decoration" element={<Decoration />} />
               <Route path="/projets" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/equipe" element={<Team />} />
+              <Route path="/team" element={<Team />} />
               <Route path="/services" element={<Services />} />
               <Route path="/african-history" element={<AfricanHistory />} />
               <Route path="/african-updates" element={<AfricanUpdates />} />
@@ -64,7 +64,7 @@ function App() {
             </Route>
 
             {/* Shop routes */}
-            <Route path="/boutique" element={<ShopLayout />}>
+            <Route path="/shop" element={<ShopLayout />}>
               <Route path="cart" element={<Cart />} />
               <Route index element={<ShopHome />} />
               <Route path="area/:areaId" element={<AreaPage />} />
