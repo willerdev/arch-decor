@@ -1,28 +1,97 @@
-import React from 'react';
-import { ArrowRight, Building2, Paintbrush, Users } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, ArrowRight, Building2, Paintbrush, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: "https://visit-detroit.imgix.net/images/main-images/woodward-avenue-shopping.jpg?auto=compress%2Cformat&crop=focalpoint&fit=min&fp-x=0.3395&fp-y=0.4766&h=630&q=80&w=1200&s=b53276c5435023f48022136ec59423fa",
+      title: "KMT Shop",
+      subtitle: "Simplifying Shopping, Elevating Style"
+    },
+    {
+      image: "https://hogfurniture.co/cdn/shop/articles/istockphoto-176961787-612x612.jpg?v=1680265453",
+      title: "Quality Design",
+      subtitle: "Creating Spaces You'll Love"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04",
+      title: "Modern Style",
+      subtitle: "Experience the Difference"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <div 
-        className="h-[80vh] bg-cover bg-center relative"
-        style={{
-          backgroundImage: 'url("https://visit-detroit.imgix.net/images/main-images/woodward-avenue-shopping.jpg?auto=compress%2Cformat&crop=focalpoint&fit=min&fp-x=0.3395&fp-y=0.4766&h=630&q=80&w=1200&s=b53276c5435023f48022136ec59423fa")'
-        }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-5xl font-bold mb-4">KMT Shop</h1>
-            <p className="text-xl mb-8">Simplifying Shopping, Elevating Style</p>
-            <Link 
-              to="/contact"
-              className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-300"
-            >
-              Contactez-nous
-            </Link>
+      <div className="relative h-[70vh] overflow-hidden">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === index ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url("${slide.image}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white px-4">
+                <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
+                <p className="text-xl mb-8">{slide.subtitle}</p>
+                <Link 
+                  to="/contact"
+                  className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition duration-300"
+                >
+                  Contactez-nous
+                </Link>
+              </div>
+            </div>
           </div>
+        ))}
+        
+        {/* Navigation Arrows */}
+        <button 
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition"
+        >
+          <ArrowLeft className="w-6 h-6" />
+        </button>
+        <button 
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition"
+        >
+          <ArrowRight className="w-6 h-6" />
+        </button>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                currentSlide === index ? 'bg-white w-6' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </div>
 

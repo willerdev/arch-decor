@@ -6,9 +6,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navigation = [
-    { name: 'Why KMT?', href: '/why-kmt' },
+   
     {
-      name: 'About',
+      name: 'About Us',
       href: '/about',
       submenu: [
         { name: 'African History', href: '/about/history' },
@@ -38,9 +38,12 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-red-600 text-2xl font-bold">
+        {/* logo */}
+
+        <Link to="/" className="text-red-600 text-2xl font-bold">
               KMT
             </Link>
+                 {/* logo */}
           </div>
 
           {/* Desktop Navigation */}

@@ -39,6 +39,8 @@ import ContactRwanda from './pages/contact/Rwanda';
 import AfricanHistory from './pages/african/History';
 import AfricanUpdates from './pages/african/Updates';
 import About from './components/About';
+import GoogleTranslate from './components/GoogleTranslate'; // Import GoogleTranslate component
+
 function App() {
   return (
     <ShopProvider>
@@ -85,7 +87,7 @@ function App() {
               <Route path="login" element={<AdminLogin />} />
               <Route element={<AdminLayout />}>
                 <Route index element={<Navigate to="/admin/products" replace />} />
-            <Route path="products" element={<AdminProducts />} />
+                <Route path="products" element={<AdminProducts />} />
                 <Route path="orders" element={<AdminOrders />} />
                 <Route path="users" element={<AdminUsers />} />
               </Route>
@@ -102,6 +104,7 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
+      <GoogleTranslate /> {/* Add Google Translate here */}
       <Outlet />
       <Footer />
     </>

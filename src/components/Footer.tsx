@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-gray-400">
                 <Mail size={16} className="mr-2" />
-                contact@arch-decor.fr
+                contact@kmtshop.biz
               </li>
               <li className="flex items-center text-gray-400">
                 <MapPin size={16} className="mr-2" />
