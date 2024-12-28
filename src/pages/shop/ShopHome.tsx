@@ -66,7 +66,7 @@ const ShopHome = () => {
       title: "Fresh Arrivals",
       subtitle: "Your Perfect Look Awaits - Shop Now!",
     
-      image: "https://images.unsplash.com/photo-1513708922415-c8e7c8602274?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 3,
@@ -127,7 +127,7 @@ const ShopHome = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 mt-10">
       {/* Hero Slider */}
-      <div className="relative h-80 md:h-96 mb-12 rounded-lg overflow-hidden">
+      <div className="relative h-90 md:h-96 mb-12 rounded-lg overflow-hidden">
         {heroSlides.map((slide, index) => (
         <div
         key={slide.id}
