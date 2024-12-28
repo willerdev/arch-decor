@@ -58,21 +58,21 @@ const ShopHome = () => {
       id: 1,
       title: "Exclusive Summer Trends",
       subtitle: "Shop the Hottest Styles - Up to 50% Off!",
-      bgColor: "bg-gradient-to-r from-blue-500 to-purple-500",
+  
       image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 2,
       title: "Fresh Arrivals",
       subtitle: "Your Perfect Look Awaits - Shop Now!",
-      bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
+    
       image: "https://images.unsplash.com/photo-1513708922415-c8e7c8602274?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 3,
       title: "Unmissable Deals",
       subtitle: "Grab Your Favorites Before Theyre Gone! !!",
-      bgColor: "bg-gradient-to-r from-green-500 to-blue-500",
+    
       image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     }
   ];
@@ -129,12 +129,17 @@ const ShopHome = () => {
       {/* Hero Slider */}
       <div className="relative h-80 md:h-96 mb-12 rounded-lg overflow-hidden">
         {heroSlides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute w-full h-full transition-all duration-700 transform ${
-              index === activeSlide ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-            } ${slide.bgColor}`}
-          >
+        <div
+        key={slide.id}
+        className={`absolute w-full h-full transition-all duration-700 transform ${
+          index === activeSlide ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        }`}
+        style={{
+          backgroundImage: `url(${slide.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
             <div className="flex flex-col items-center justify-center h-full text-white">
               <h2 className="text-4xl font-bold mb-2 animate-fade-in">{slide.title}</h2>
               <p className="text-xl animate-slide-up">{slide.subtitle}</p>
