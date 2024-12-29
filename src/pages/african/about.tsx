@@ -12,7 +12,7 @@ const About = () => {
       name: "Kwame Nkrumah",
       years: "1909–1972",
       country: "Ghana",
-      legacy: "Ghana's first president, a champion of pan-Africanism, and key figure in establishing the African Union."
+      legacy: "Ghana s first president, a champion of pan-Africanism, and key figure in establishing the African Union."
     },
     // ... other leaders data
   ];
@@ -24,7 +24,7 @@ const About = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              About <span className="text-yellow-500">KMT</span>
+              About <span className="text-yellow-500"> KMT </span>
             </h1>
             <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
           </div>
@@ -46,7 +46,7 @@ const About = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">African History</h2>
             <p className="text-gray-700 mb-8">
-              Africa's history is filled with courageous individuals who shaped the continent's legacy
+              Africa s history is filled with courageous individuals who shaped the continent s legacy
               through their sacrifices, leadership, and vision. Below, we honor some of the most notable figures:
             </p>
             
@@ -80,7 +80,7 @@ const About = () => {
           <section className="bg-white rounded-lg shadow-lg p-6 md:p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">African Updates</h3>
             <p className="text-gray-700">
-              This section will keep you informed about Africa's current achievements...
+              This section will keep you informed about Africa s current achievements...
             </p>
           </section>
         </div>
