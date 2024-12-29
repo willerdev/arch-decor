@@ -95,6 +95,7 @@ function App() {
                 <Route path="products" element={<AdminProducts />} />
                 <Route path="orders" element={<AdminOrders />} />
                 <Route path="users" element={<AdminUsers />} />
+                <Route path="dashboard" element={<AdminDashboard />} />
                 <Route path="categories" element={<AdminCategories />} />
                 <Route path="settings" element={<AdminSettings />} />
                 <Route path="sliders" element={<AdminSliders />} />
