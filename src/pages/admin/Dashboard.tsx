@@ -11,38 +11,47 @@ const AdminDashboard = () => {
     totalCustomers: 0,
     totalProducts: 0,
   });
+  const [products, setProducts] = useState<{ id: string; [key: string]: any }[]>([]);
+  const [orders, setOrders] = useState<{ id: string; [key: string]: any }[]>([]);
+  
+ 
 
-  const [products, setProducts] = useState([]);
-  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
 
-//   useEffect(() => {
-//     fetchDashboardData();
-//   }, []);
+  const fetchDashboardData = async () => {
+    try {
+      setIsLoading(true);
 
-//   const fetchDashboardData = async () => {
-//     try {
-//       setIsLoading(true);
+      // Fetch statistics
+      const statsDoc = await getDoc(doc(db, 'statistics', 'dashboard'));
+      if (statsDoc.exists()) {
+        const data = statsDoc.data();
+        setStatistics({
+          totalSales: data.totalSales || 0,
+          totalOrders: data.totalOrders || 0,
+          totalCustomers: data.totalCustomers || 0,
+          totalProducts: data.totalProducts || 0,
+        });
+      } else {
+        console.error('Statistics collection does not exist.');
+      }
 
-//       // Fetch statistics
-//       const statsDoc = await getDoc(doc(db, 'statistics', 'dashboard'));
-//       if (statsDoc.exists()) {
-//         setStatistics(statsDoc.data());
-//       }
+      // Fetch products
+      const productsSnapshot = await getDocs(collection(db, 'products'));
+      setProducts(productsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
 
-//       // Fetch products
-//       const productsSnapshot = await getDocs(collection(db, 'products'));
-//       setProducts(productsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-
-//       // Fetch orders
-//       const ordersSnapshot = await getDocs(collection(db, 'orders'));
-//       setOrders(ordersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-//     } catch (error) {
-//       console.error('Error fetching dashboard data:', error);
-//       alert('Failed to load dashboard data. Please try again.');
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
+      // Fetch orders
+      const ordersSnapshot = await getDocs(collection(db, 'orders'));
+      setOrders(ordersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error);
+      alert('Failed to load dashboard data. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   if (isLoading) {
     return <div className="flex justify-center items-center h-64">Loading...</div>;
@@ -94,14 +103,14 @@ const AdminDashboard = () => {
       <div className="mb-6">
         <h2 className="text-xl font-bold mb-4">Product Management</h2>
         <div className="bg-white p-6 rounded-lg shadow">
-          {/* <ul>
+          <ul>
             {products.map(product => (
               <li key={product.id} className="flex justify-between py-2 border-b">
                 <span>{product.name}</span>
                 <span>${product.price.toFixed(2)}</span>
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </div>
 
@@ -109,14 +118,14 @@ const AdminDashboard = () => {
       <div className="mb-6">
         <h2 className="text-xl font-bold mb-4">Order Tracking</h2>
         <div className="bg-white p-6 rounded-lg shadow">
-          {/* <ul>
+          <ul>
             {orders.map(order => (
               <li key={order.id} className="flex justify-between py-2 border-b">
                 <span>Order #{order.id}</span>
                 <span>Status: {order.status}</span>
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </div>
 
