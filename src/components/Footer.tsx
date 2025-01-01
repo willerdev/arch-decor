@@ -20,7 +20,7 @@ const Footer = () => {
               <li><Link to="/architecture" className="text-gray-400 hover:text-white">Architecture</Link></li>
               <li><Link to="/decoration" className="text-gray-400 hover:text-white">Décoration</Link></li>
               <li><Link to="/projets" className="text-gray-400 hover:text-white">Nos Projets</Link></li>
-              <li><Link to="/boutique" className="text-gray-400 hover:text-white">Boutique</Link></li>
+              <li><Link to="/boutique" className="text-gray-400 hover:text-white">Boutiques</Link></li>
             </ul>
           </div>
           
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Arch-Decor. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} KMT Shop. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

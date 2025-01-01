@@ -41,7 +41,7 @@ const Header = () => {
         {/* logo */}
 
         <Link to="/" className="text-red-600 text-2xl font-bold">
-              KMT
+             
             </Link>
                  {/* logo */}
           </div>

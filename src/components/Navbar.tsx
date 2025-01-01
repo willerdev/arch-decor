@@ -25,8 +25,8 @@ const Navbar = () => {
           {/* Logo in the Center */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Logo" className="w-8 h-8 mr-2" />
-              <span className="text-red-600 text-2xl font-bold">KMT Shop</span>
+              <img src={logo} alt="Logo" className="w-12 h-12 mr-2" />
+              {/* <span className="text-red-600 text-2xl font-bold">KMT Shop</span> */}
             </Link>
           </div>
 
