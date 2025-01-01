@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img src={logo} alt="Logo" className="w-12 h-12 mr-2" />
-              {/* <span className="text-red-600 text-2xl font-bold">KMT Shop</span> */}
+              {/* <span className="text-red-600 text-2xl font-bold">KMT Shop</span>asdasdasdasd */}
             </Link>
           </div>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/shop" className="text-gray-700 hover:text-red-600">Shop</Link>
             <Link to="/team" className="text-gray-700 hover:text-red-600">Our Team</Link>
-            <Link to="/services" className="text-gray-700 hover:text-red-600">Services</Link>
+            <Link to="/services" className="text-gray-700 hover:text-red-600">Services </Link>
           </div>
 
           {/* Mobile Menu Button */}
